@@ -84,7 +84,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
   }, []);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: any;
     if (isCallActive) {
       interval = setInterval(() => {
         setCallDuration(prev => prev + 1);
