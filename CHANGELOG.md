@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+- **Metadata Fix**: Updated `vapi-calls` skill URL to `https://clawhub.ai/colygon/vapi-skill` per registry requirements.
+- **Core**: Bumped version to 0.0.5.
+
 ## 0.0.4
 - **Conflict Resolution**: Fixed invalid slug/URL for `vapi-calls` to prevent installation conflicts.
 - **Server Update**: Added missing `start_call` and `end_call` handlers for VAPI Calls in the server registry.
