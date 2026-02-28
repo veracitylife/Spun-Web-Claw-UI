@@ -6,9 +6,10 @@ import OpenClawChat from './pages/OpenClawChat';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/claw-skill-ui">
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/chat" element={<OpenClawChat />} />
         <Route path="/openclaw-chat" element={<OpenClawChat />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/skill/:id" element={<SkillDetail />} />

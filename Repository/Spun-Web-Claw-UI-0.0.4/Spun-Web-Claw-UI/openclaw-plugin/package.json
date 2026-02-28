@@ -1,0 +1,23 @@
+{
+  "name": "@spunweb/openclaw-clawskillui",
+  "version": "0.0.4",
+  "type": "commonjs",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "openclaw-plugin",
+    "openclaw-skill"
+  ],
+  "openclaw": {
+    "type": "plugin",
+    "displayName": "Claw Skill UI",
+    "description": "Unified interface for Spun Web skills",
+    "icon": "layout",
+    "route": "/claw-skill-ui"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "serve-static": "^1.15.0",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}

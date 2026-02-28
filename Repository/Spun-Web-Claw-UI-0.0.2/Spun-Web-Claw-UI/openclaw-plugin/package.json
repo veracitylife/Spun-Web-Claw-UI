@@ -1,0 +1,12 @@
+{
+  "name": "@spunweb/openclaw-clawskillui",
+  "version": "0.0.2",
+  "type": "commonjs",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1",
+    "serve-static": "^1.15.0",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Spun-Web-Claw-UI",
+  "version": "0.0.5",
+  "description": "Unified OpenClaw Skill Interface for Brave Search, VAPI Calls, and Twitter Automation",
+  "author": "Spun Web",
+  "license": "ISC",
+  "entry": "server/dist/index.js",
+  "install": "npm install && cd web && npm install && npm run build && cd ../server && npm install && npm run build",
+  "env": {
+    "PORT": "3000",
+    "PUPPETEER_HEADLESS": "true"
+  },
+  "permissions": [
+    "network",
+    "filesystem"
+  ],
+  "commands": [
+    {
+      "name": "brave-search",
+      "description": "Search the web using Brave Search",
+      "usage": "brave-search <query>"
+    },
+    {
+      "name": "brave-navigate",
+      "description": "Navigate to a URL using Puppeteer",
+      "usage": "brave-navigate <url>"
+    },
+    {
+      "name": "vapi-call",
+      "description": "Initiate a VAPI voice call",
+      "usage": "vapi-call <number>"
+    },
+    {
+      "name": "twitter-post",
+      "description": "Post a tweet via Twitter API",
+      "usage": "twitter-post <content>"
+    }
+  ],
+  "ui": {
+    "route": "/claw-skill-ui",
+    "name": "Claw Skill UI"
+  }
+}
