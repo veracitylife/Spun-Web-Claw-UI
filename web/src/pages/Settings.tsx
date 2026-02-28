@@ -25,7 +25,6 @@ export default function Settings() {
   const [testing, setTesting] = useState(false);
   const [testOk, setTestOk] = useState<boolean | null>(null);
   const [gatewayUrl, setGatewayUrl] = useState(localStorage.getItem('gateway_url') || 'http://localhost:18789');
-  const [betterGatewayUrl, setBetterGatewayUrl] = useState(localStorage.getItem('better_gateway_url') || (gatewayUrl.replace(/\/$/, '') + '/better-gateway/'));
 
   useEffect(() => {
     fetchSkills();
@@ -57,7 +56,6 @@ export default function Settings() {
     localStorage.setItem('clawhub_screenshot_path', screenshotPath);
     localStorage.setItem('clawhub_api_token', apiToken);
     localStorage.setItem('gateway_url', gatewayUrl);
-    localStorage.setItem('better_gateway_url', betterGatewayUrl);
     savePuppeteerSettings({ headless: pupHeadless, proxy: pupProxy }).catch(() => {});
     setTimeout(() => {
       setSavingUrl(false);
@@ -135,7 +133,7 @@ export default function Settings() {
         )}
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-slate-400 mb-1">OpenClaw Gateway URL</label>
+            <label className="block text-sm font-medium text-slate-400 mb-1">OpenClaw Dashboard URL</label>
             <input 
               type="text"
               value={gatewayUrl}
@@ -143,18 +141,7 @@ export default function Settings() {
               placeholder="http://localhost:18789"
               className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500 transition-colors"
             />
-            <p className="text-xs text-slate-500 mt-1">Used by header links to launch the original gateway.</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-slate-400 mb-1">Better Gateway URL</label>
-            <input 
-              type="text"
-              value={betterGatewayUrl}
-              onChange={(e) => setBetterGatewayUrl(e.target.value)}
-              placeholder={gatewayUrl.replace(/\/$/, '') + '/better-gateway/'}
-              className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500 transition-colors"
-            />
-            <p className="text-xs text-slate-500 mt-1">Set to your Better Gateway route after installing the plugin.</p>
+            <p className="text-xs text-slate-500 mt-1">Header includes a single “OpenClaw Dashboard” link to this URL.</p>
           </div>
           <div>
             <label className="block text-sm font-medium text-slate-400 mb-1">Puppeteer Headless</label>

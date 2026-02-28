@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, PhoneCall, PhoneOff, User, Volume2, Mic, Settings, List, Users, FileText, Megaphone, Plus, Trash2, Play, Save, Download } from 'lucide-react';
+import { Phone, Settings, List, Users, FileText, Volume2, Plus, Trash, Play, Save, ArrowDown, X } from 'lucide-react';
 import { runSkillCommand } from '../../api';
 
 interface VapiCallsInterfaceProps {
@@ -47,7 +47,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
   const [callDuration, setCallDuration] = useState(0);
   const [callStatus, setCallStatus] = useState('Ready');
   const [callLogs, setCallLogs] = useState<CallLog[]>([]);
-  const [selectedVoice, setSelectedVoice] = useState('rachel');
+  const [selectedVoice] = useState('rachel');
 
   // Call Center State
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -197,7 +197,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
           className={`p-3 rounded-xl transition-all ${activeTab === 'campaigns' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'text-slate-400 hover:text-white hover:bg-slate-700'}`}
           title="Call Center"
         >
-          <Megaphone size={24} />
+          <Volume2 size={24} />
         </button>
         <button 
           onClick={() => setActiveTab('contacts')}
@@ -259,7 +259,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
                       onClick={handleHangup}
                       className="w-20 h-20 bg-red-600 hover:bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-red-500/20 transition-all hover:scale-105 active:scale-95"
                     >
-                      <PhoneOff size={32} />
+                      <X size={32} />
                     </button>
                   ) : (
                     <button 
@@ -267,7 +267,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
                       disabled={!phoneNumber}
                       className="w-20 h-20 bg-green-600 hover:bg-green-500 disabled:bg-slate-700 disabled:cursor-not-allowed rounded-full flex items-center justify-center text-white shadow-lg shadow-green-500/20 transition-all hover:scale-105 active:scale-95"
                     >
-                      <PhoneCall size={32} />
+                      <Phone size={32} />
                     </button>
                   )}
                 </div>
@@ -284,7 +284,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
                   <div key={log.id} className="bg-slate-800 p-3 rounded-lg border border-slate-700 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-full ${log.status === 'completed' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-                        {log.status === 'completed' ? <PhoneCall size={16} /> : <PhoneOff size={16} />}
+                        {log.status === 'completed' ? <Phone size={16} /> : <X size={16} />}
                       </div>
                       <div>
                         <div className="font-medium text-slate-200">{log.phoneNumber}</div>
@@ -446,7 +446,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-white">{script.name}</h4>
                       <button className="text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Trash2 size={16} />
+                        <Trash size={16} />
                       </button>
                     </div>
                     <p className="text-sm text-slate-400 line-clamp-3 mb-3">{script.content}</p>
@@ -474,7 +474,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
               </div>
               <div className="flex gap-2">
                 <button className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded border border-slate-700 flex items-center gap-2">
-                  <Download size={18} /> Import CSV
+                  <ArrowDown size={18} /> Import CSV
                 </button>
               </div>
             </div>
@@ -538,7 +538,7 @@ const VapiCallsInterface: React.FC<VapiCallsInterfaceProps> = ({ skillId }) => {
                           onClick={() => setContacts(prev => prev.filter(c => c.id !== contact.id))}
                           className="text-slate-500 hover:text-red-400 transition-colors"
                         >
-                          <Trash2 size={16} />
+                          <Trash size={16} />
                         </button>
                       </td>
                     </tr>

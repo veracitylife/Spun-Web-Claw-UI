@@ -8,10 +8,9 @@ Open “Settings” in the top navigation to connect and configure.
 - Save & Connect: persists values and reloads the skills list
 - Test Connection: validates server reachability with current settings
 
-## Gateway Links
-- Gateway URL: default local gateway is `http://localhost:18789` (binds to 127.0.0.1)
-- Better Gateway URL: e.g., `http://localhost:18789/better-gateway/`
-- These render as header links (“Gateway”, “Better Gateway”), opening in a new tab
+## OpenClaw Dashboard Link
+- Dashboard URL: default local gateway is `http://localhost:18789` (binds to 127.0.0.1)
+- The header renders a single “OpenClaw Dashboard” link to this URL (opens in a new tab).
 
 Security note: The default gateway port 18789 is intentionally local-only. Avoid exposing it publicly without TLS, authentication, or a secure tunnel.
 

@@ -6,7 +6,6 @@ import { APP_VERSION } from '../version';
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const gatewayUrl = (typeof window !== 'undefined' && (localStorage.getItem('gateway_url') || 'http://localhost:18789')) as string;
-  const betterGatewayUrl = (typeof window !== 'undefined' && (localStorage.getItem('better_gateway_url') || `${gatewayUrl.replace(/\/$/, '')}/better-gateway/`)) as string;
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col">
@@ -29,31 +28,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium hover:bg-slate-700 text-slate-300"
-              title="OpenClaw Gateway"
+              title="OpenClaw Dashboard"
             >
               <ExternalLink size={16} />
-              <span className="hidden sm:inline">Gateway</span>
-            </a>
-            <a 
-              href={betterGatewayUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium hover:bg-slate-700 text-slate-300"
-              title="OpenClaw Better Gateway"
-            >
-              <ExternalLink size={16} />
-              <span className="hidden sm:inline">Better Gateway</span>
-            </a>
-            <Link 
-              to="/skill/buddyclaw" 
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium ${
-                location.pathname.startsWith('/skill/buddyclaw') ? 'bg-blue-600 text-white' : 'hover:bg-slate-700 text-slate-300'
-              }`}
-              title="Original OpenClaw Chat/Dashboard"
-            >
-              <LayoutDashboard size={16} />
               <span className="hidden sm:inline">OpenClaw Dashboard</span>
-            </Link>
+            </a>
             <Link 
               to="/openclaw-chat" 
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium ${

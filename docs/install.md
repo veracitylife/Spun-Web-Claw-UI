@@ -58,11 +58,10 @@ You can link to your existing OpenClaw Gateway and Better Gateway directly from 
 }
 ```
 
-### Header Links
+### Header Link
 - In Settings, set:
-  - Gateway URL (default local gateway: `http://localhost:18789`)
-  - Better Gateway URL (e.g., `http://localhost:18789/better-gateway/`)
-- The top bar shows “Gateway” and “Better Gateway” links that open in a new tab.
+  - OpenClaw Dashboard URL (default `http://localhost:18789`)
+- The top bar shows a single “OpenClaw Dashboard” link that opens in a new tab.
 
 ## Default Gateway and Security
 - Default host/port: `http://localhost:18789` bound to `127.0.0.1`

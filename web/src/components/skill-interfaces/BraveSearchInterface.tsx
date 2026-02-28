@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
-  Search, Camera, Folder, Plus, Globe, X, Database, Key, 
-  MousePointer, ArrowLeft, ArrowRight, RotateCw, Download, 
+  Search, Globe, X, Database, Key, 
+  ArrowLeft, ArrowRight, RefreshCw, 
   FileText, Link as LinkIcon, Image, Shield
 } from 'lucide-react';
 import { runSkillCommand, getBraveSavedQueries, addBraveSavedQuery, deleteBraveSavedQuery } from '../../api';
@@ -372,7 +372,7 @@ export default function BraveSearchInterface({ skillId }: BraveSearchInterfacePr
               onClick={handleNavigate}
               className={`p-1.5 hover:bg-slate-700 rounded text-slate-400 hover:text-white ${loading ? 'animate-spin' : ''}`}
             >
-              <RotateCw size={16} />
+              <RefreshCw size={16} />
             </button>
           </div>
           
@@ -393,7 +393,7 @@ export default function BraveSearchInterface({ skillId }: BraveSearchInterfacePr
           </div>
           
           <button className="p-1.5 hover:bg-slate-700 rounded text-slate-400 hover:text-white" title="Download Screenshot">
-            <Camera size={18} />
+            <Image size={18} />
           </button>
         </div>
 
